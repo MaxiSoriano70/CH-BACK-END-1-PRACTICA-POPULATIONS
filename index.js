@@ -42,7 +42,20 @@ const connectMongoDB = async () => {
         )
         console.log(response);*/
 
-        const student = await Student.findById("67c770a2fb79a904b99fe083").populate("courses.course");
+        /*const student = await Student.findById("67c770a2fb79a904b99fe083").populate("courses.course");
+        console.log(JSON.stringify(student, null , 2));*/
+
+        /*const students = await Student.find();
+        console.log(JSON.stringify(students, null , 2));*/
+
+        const student = new Student({
+            first_name: "Celeste",
+            last_name: "Severich",
+            email: "cele@gmail.com",
+            password: "peluquera"
+        });
+
+        await student.save();
         console.log(JSON.stringify(student, null , 2));
 
         console.log("Conectado correctamente a MONGODB");
